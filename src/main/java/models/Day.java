@@ -57,4 +57,11 @@ public class Day {
     }
 
 
+    public double getTotalCalories() {
+        double dayCalories = 0;
+        for (Meal meal : meals){
+            dayCalories += meal.getMealCalories();
+        }
+        return dayCalories;
+    }
 }

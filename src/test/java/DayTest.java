@@ -29,4 +29,10 @@ public class DayTest {
         assertEquals(1, day.getMeals().size());
     }
 
+    @Test
+    public void canCalculateCaloriesForDay() {
+        meal.addFood(food);
+        day.addMeal(meal);
+        assertEquals(1000000, day.getTotalCalories(), 0.1);
+    }
 }
