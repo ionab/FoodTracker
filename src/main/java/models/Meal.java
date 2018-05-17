@@ -65,4 +65,12 @@ public class Meal {
     public void addFood(Food food){
         foods.add(food);
     }
+
+    public double getMealCalories() {
+        double mealCalories = 0;
+        for (Food foodItem : foods) {
+            mealCalories += foodItem.getCalories();
+        }
+        return mealCalories;
+    }
 }

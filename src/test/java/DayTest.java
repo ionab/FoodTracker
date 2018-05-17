@@ -28,4 +28,5 @@ public class DayTest {
         day.addMeal(meal);
         assertEquals(1, day.getMeals().size());
     }
+
 }

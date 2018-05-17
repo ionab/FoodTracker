@@ -28,4 +28,9 @@ public class MealTest {
         assertEquals(1, meal.getFoods().size());
     }
 
+    @Test
+    public void canCalculateMealCalories() {
+        meal.addFood(food);
+        assertEquals(1000000, meal.getMealCalories(), 0.1);
+    }
 }
