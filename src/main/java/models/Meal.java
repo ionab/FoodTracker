@@ -11,13 +11,15 @@ public class Meal {
     private Set<Food> foods;
     private int id;
     private MealType mealType;
+    private Day day;
 
 
     public Meal() {
     }
 
-    public Meal(MealType mealType) {
+    public Meal(MealType mealType, Day day) {
         this.mealType = mealType;
+        this.day = day;
     }
 
     @OneToMany(mappedBy = "meal")
@@ -46,5 +48,15 @@ public class Meal {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "day_id", nullable = false)
+    public Day getDay() {
+        return day;
+    }
+
+    public void setDay(Day day) {
+        this.day = day;
     }
 }
