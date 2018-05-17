@@ -4,6 +4,7 @@ import sun.util.calendar.Gregorian;
 
 import javax.persistence.*;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -19,6 +20,7 @@ public class Day {
 
     public Day(GregorianCalendar date) {
         this.date = date;
+        this.meals = new HashSet<Meal>();
     }
 
     @OneToMany(mappedBy = "day")
