@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -20,6 +21,7 @@ public class Meal {
     public Meal(MealType mealType, Day day) {
         this.mealType = mealType;
         this.day = day;
+        this.foods = new HashSet<Food>();
     }
 
     @OneToMany(mappedBy = "meal")
@@ -58,5 +60,9 @@ public class Meal {
 
     public void setDay(Day day) {
         this.day = day;
+    }
+
+    public void addFood(Food food){
+        foods.add(food);
     }
 }

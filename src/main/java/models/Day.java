@@ -49,4 +49,10 @@ public class Day {
     public void setId(int id) {
         this.id = id;
     }
+
+    public void addMeal(Meal meal){
+        meals.add(meal);
+    }
+
+
 }
